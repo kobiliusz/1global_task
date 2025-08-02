@@ -21,6 +21,13 @@ public class Brand {
         this.devices = devices;
     }
 
+    public Brand(String name) {
+        this.name = name;
+    }
+
+    public Brand() {
+    }
+
     public Long getId() {
         return id;
     }

@@ -1,24 +1,23 @@
 package com.it.kobus.devices.logic;
 
-import com.it.kobus.devices.db.entity.Device;
-import com.it.kobus.devices.db.entity.DeviceState;
+import com.it.kobus.devices.logic.dto.DeviceDTO;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface DevicesService {
 
-    Device createDevice(Device device);
+    DeviceDTO createDevice(DeviceDTO device);
 
-    Device updateDevice(Device device);
+    DeviceDTO updateDevice(DeviceDTO device);
 
-    Optional<Device> getDevice(Long id);
+    Optional<DeviceDTO> getDevice(Long id);
 
-    List<Device> getAllDevices();
+    List<DeviceDTO> getAllDevices();
 
-    List<Device> getDevicesByBrand(String brand);
+    List<DeviceDTO> getDevicesByBrand(String brand);
 
-    List<Device> getDevicesByState(String state);
+    List<DeviceDTO> getDevicesByState(String state);
 
     void deleteDevice(Long id);
 

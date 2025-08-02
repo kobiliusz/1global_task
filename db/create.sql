@@ -26,8 +26,12 @@ CREATE TABLE IF NOT EXISTS `brand` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
--- Zrzucanie danych dla tabeli devices.brand: ~0 rows (około)
+-- Zrzucanie danych dla tabeli devices.brand: ~3 rows (około)
 DELETE FROM `brand`;
+INSERT INTO `brand` (`id`, `name`) VALUES
+	(1, 'Siemens'),
+	(2, 'Motorola'),
+	(3, 'Huawei');
 
 -- Zrzut struktury tabela devices.device
 CREATE TABLE IF NOT EXISTS `device` (

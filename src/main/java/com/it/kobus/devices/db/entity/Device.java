@@ -32,6 +32,9 @@ public class Device {
         this.created = created;
     }
 
+    public Device() {
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

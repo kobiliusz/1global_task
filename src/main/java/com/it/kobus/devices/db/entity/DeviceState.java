@@ -1,16 +1,14 @@
 package com.it.kobus.devices.db.entity;
 
 public enum DeviceState {
-    AVAILABLE(1, "available"),
-    IN_USE(2, "in-use"),
-    INACTIVE(3, "inactive");
+    AVAILABLE(1),
+    IN_USE(2),
+    INACTIVE(3);
 
     private final int id;
-    private final String name;
 
-    DeviceState(int id, String name) {
+    DeviceState(int id) {
         this.id = id;
-        this.name = name;
     }
 
     public int getId() {
@@ -22,13 +20,6 @@ public enum DeviceState {
             if (state.id == id) return state;
         }
         throw new IllegalArgumentException("Unknown DeviceState id: " + id);
-    }
-
-    public static DeviceState fromName(String name) {
-        for (DeviceState state : values()) {
-            if (state.name.equals(name)) return state;
-        }
-        throw new IllegalArgumentException("Unknown DeviceState name: " + name);
     }
 
 }
