@@ -1,9 +1,3 @@
--- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Wersja serwera:               11.8.2-MariaDB - mariadb.org binary distribution
--- Serwer OS:                    Win64
--- HeidiSQL Wersja:              12.10.0.7000
--- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
@@ -14,10 +8,14 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-
 -- Zrzut struktury bazy danych devices
 CREATE DATABASE IF NOT EXISTS `devices` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_uca1400_ai_ci */;
 USE `devices`;
+
+-- Create user and grant privileges
+CREATE USER IF NOT EXISTS 'devices'@'%' IDENTIFIED BY 'delicje';
+GRANT ALL PRIVILEGES ON devices.* TO 'devices'@'%';
+FLUSH PRIVILEGES;
 
 -- Zrzut struktury tabela devices.brand
 CREATE TABLE IF NOT EXISTS `brand` (

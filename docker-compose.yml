@@ -1,0 +1,37 @@
+
+services:
+
+  app:
+    build: .
+    container_name: devices-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mariadb
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/devices
+      SPRING_DATASOURCE_USERNAME: devices
+      SPRING_DATASOURCE_PASSWORD: delicje
+    networks:
+      - devnet
+
+  mariadb:
+    image: mariadb:11
+    container_name: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: devices
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./db/create.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    ports:
+      - "3306:3306"
+    networks:
+      - devnet
+
+volumes:
+  dbdata:
+
+networks:
+  devnet:
