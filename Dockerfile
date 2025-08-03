@@ -1,5 +1,5 @@
-# Base image with JDK 17
-FROM eclipse-temurin:17-jdk
+# Base image with JDK 21
+FROM eclipse-temurin:21-jdk
 
 # App directory inside container
 WORKDIR /app
