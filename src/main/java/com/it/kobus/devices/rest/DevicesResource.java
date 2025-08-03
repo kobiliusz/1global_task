@@ -32,7 +32,7 @@ public class DevicesResource {
 
     @PutMapping("/{id}")
     public ResponseEntity<DeviceDTO> update(@PathVariable Long id, @RequestBody DeviceDTO dto) {
-        dto.id = id; // wymuszenie zgodności z URL
+        dto.id = id;
         DeviceDTO updated = deviceService.updateDevice(dto);
         return ResponseEntity.ok(updated);
     }
